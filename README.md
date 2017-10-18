@@ -11,3 +11,5 @@ Random.org: p = 0.665
 
 In addition, 2D plots of the random values within a dataset were made to visualize possible patterns that would otherwise not be intuitive. Luckily, none of the three seemed to have particularly clear patterns when ordered this way.
 Auto-correlation graphs were also generated using R for all three datasets. All these plots are named after their origin sets, Random, Secure and True.
+
+All these factors lead to the conclusion of Random.org being the best source of random numbers out of the ones tested. However, due to accessing these numbers being slow compared to generating them using the secure generator, the secure generator was chosen to be used in the actual MCTS implementation. Two different remapping functions were used to get the random numbers in the ranges required by the program.
