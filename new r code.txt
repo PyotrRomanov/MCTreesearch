@@ -1,0 +1,33 @@
+#Log of console commands in R to compare lists of randomly generated numbers
+
+#convert to numeric while moving everything to one data frame
+randomsTrue$Random <- as.numeric(randoms$X1)
+randomsTrue$RandomsSecure <- as.numeric(randomsSecureSecure$X1)
+randomsTrue$RandomTrue <- as.numeric(randomsTrue$X1)
+randomsTrue$X1 <- NULL #get rid of non-numerical data
+
+#make histograms for intuitive visualization
+hist(randomsTrue$Random)
+hist(randomsTrue$RandomsSecure)
+hist(randomsTrue$RandomTrue)
+
+#apply One-sample Kolmogorov-Smirnov test to see similarity to uniform distribution
+ks.test(randomsTrue$Random, "punif", 0, 1) #D = 0.0032755, p-value = 0.2336
+ks.test(randomsTrue$RandomSecure, "punif", 0, 1) #D = 0.002829, p-value = 0.4002
+ks.test(randomsTrue$RandomTrue, "punif", 0, 1) #D = 0.0023008, p-value = 0.665
+
+#2d plot of values
+x = randomsTrue$Random[1:99999]
+y = randomsTrue$Random[2:100000]
+plot(x,y,pch=20)
+xsecure = randomsTrue$RandomSecure[1:99999]
+ysecure = randomsTrue$RandomSecure[2:100000]
+plot(xsecure,ysecure,pch=20)
+xtrue = randomsTrue$RandomTrue[1:99999]
+ytrue = randomsTrue$RandomTrue[2:100000]
+plot(xtrue, ytrue, pch=20)
+
+#check for autocorrelations
+acf(randomsTrue$Random)
+acf(randomsTrue$RandomSecure)
+acf(randomsTrue$RandomTrue)
