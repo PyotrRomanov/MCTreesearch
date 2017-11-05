@@ -1,0 +1,37 @@
+FINE:
+lm(formula = X0$rate ~ X0$c + X0$c2 + X0$c3)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.3363 -1.3238  0.2801  1.7517  5.3665 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   56.882      1.504  37.826  < 2e-16 ***
+X0$c          80.538      6.764  11.907 4.82e-14 ***
+X0$c2        -82.220      8.119 -10.127 4.43e-12 ***
+X0$c3         23.157      2.735   8.466 4.35e-10 ***
+---
+Signif. codes:  0 e***f 0.001 e**f 0.01 e*f 0.05 e.f 0.1 e f 1
+
+Residual standard error: 2.604 on 36 degrees of freedom
+Multiple R-squared:  0.8344,	Adjusted R-squared:  0.8206 
+F-statistic: 60.46 on 3 and 36 DF,  p-value: 3.935e-14
+
+Confidence:
+      fit             lwr             upr       
+ Min.   :56.88   Min.   :53.83   Min.   :59.93  
+ 1st Qu.:70.49   1st Qu.:68.90   1st Qu.:72.20  
+ Median :73.89   Median :72.44   Median :75.72  
+ Mean   :73.88   Mean   :72.27   Mean   :75.50  
+ 3rd Qu.:78.70   3rd Qu.:77.28   3rd Qu.:80.12  
+ Max.   :80.91   Max.   :79.49   Max.   :82.33  
+
+Prediction:
+      fit             lwr             upr       
+ Min.   :56.88   Min.   :50.78   Min.   :62.98  
+ 1st Qu.:70.49   1st Qu.:64.94   1st Qu.:76.04  
+ Median :73.89   Median :68.41   Median :79.42  
+ Mean   :73.88   Mean   :68.35   Mean   :79.42  
+ 3rd Qu.:78.70   3rd Qu.:73.23   3rd Qu.:84.17  
+ Max.   :80.91   Max.   :75.45   Max.   :86.38  
